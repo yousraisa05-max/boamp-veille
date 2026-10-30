@@ -138,3 +138,7 @@ docs/annotation_guide.md  guide d'annotation
 data/annotation/          annotations (CSV)
 data/processed/           prédictions, erreurs, digest
 ```
+
+## Auteure
+
+Yousra — Master Traitement automatique des langues, Université Paris Nanterre.

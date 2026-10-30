@@ -114,8 +114,10 @@ def notice_nature(rec: dict) -> str:
 def group_key(acheteur: str, objet: str) -> str:
     """Même acheteur + même début d'objet (sans « avis d'attribution - ») = même procédure."""
     o = re.sub(r"^\s*avis\s+(d['’]\s*)?(attribution|rectificatif)\s*[-:]?\s*", "", objet, flags=re.I)
+    a = re.sub(r"\(.*?\)", " ", acheteur)                       # « Ville de Beaucaire (30) »
+    a = re.sub(r"^\s*(la\s+)?(ville|commune|mairie)\s+(de|d['’])\s*", "", a, flags=re.I)
     norm = lambda s: re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
-    return norm(acheteur)[:40] + "|" + norm(o)[:60]
+    return norm(a)[:40] + "|" + norm(o)[:60]
 
 
 def main() -> None:

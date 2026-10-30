@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 data/raw/boamp_raw.jsonl
 .env
+.DS_Store
+*.numbers
